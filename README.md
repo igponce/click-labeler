@@ -15,6 +15,10 @@ Problem is you need to label some features present in the images in order to tra
 ```{bash}
 click_labeler.py <image to label>.{png|jpg}
 ```
+
+![Just click where you want the feature to label](click_feature.jpg)
+
+
 ### Keys
 
 To reset the points press 'r'.
@@ -23,7 +27,7 @@ To exit, press q.
 
 If you try to save changes withot clicking any point, the program will end.
 
-### Use in directiries
+### Use in directories
 
 If you want to use the program to label *every* file in your directory, use the shell:
 
