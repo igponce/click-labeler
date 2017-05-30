@@ -17,6 +17,7 @@ def click_loop (event, x, y, flags, param):
         # draw a point
         cv2.circle(image, (x,y) , 5, (0,255,0), 3)
         cv2.putText(image,str(len(points)),(x+y), 1, 2,(0,0,0),2,cv2.LINE_AA)
+        cv2.putText(image,str(len(points)),(x+1,y+1), 1, 2,(255,255,255),2,cv2.LINE_AA)
         cv2.imshow("foto", image)
         print("Point @: {} {}".format(x,y))
 
