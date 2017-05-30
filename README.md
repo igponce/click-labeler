@@ -1,4 +1,6 @@
 # clickPOILabeler
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b243ea298aaf4a0f9a7e87378a7e6d93)](https://www.codacy.com/app/igponce/click-labeler?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=igponce/click-labeler&amp;utm_campaign=Badge_Grade)
+
 Point-and-click POI labeler for images (needed before you want to train an algorithm or neural network)
 
 So you want to train a neural network, and you have enough images. Great.
