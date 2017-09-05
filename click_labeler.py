@@ -1,8 +1,6 @@
 # import the necessary packages
 import argparse
 import cv2
-import numpy as np
-from scipy.ndimage import zoom
 from skimage.transform import resize
 
 # initialize the list of reference points and state
@@ -17,15 +15,14 @@ def click_loop (event, x, y, flags, param):
     # Point = Left button UP
     if event == cv2.EVENT_LBUTTONUP:
         points.append((x, y))
-        
+
         # draw a point
-        cv2.circle(image, (x,y) , 5, (0,255,0), 3) 
+        cv2.circle(image, (x,y) , 5, (0,255,0), 3)
         cv2.putText(image,str(len(points)),(x+1,y+1), 1, 2,(0,0,0),2,cv2.LINE_AA)
         cv2.putText(image,str(len(points)),(x,y), 1, 2,(255,255,255),2,cv2.LINE_AA)
         cv2.imshow(filename, image)
-        print("Point @: {} {}".format(x,y)) 
+        print("Point @: {} {}".format(x,y))
 
- 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True, help="Path to the image")
@@ -34,11 +31,9 @@ args = vars(ap.parse_args())
 # load the image, clone it, and setup the mouse callback function
 
 filename = args["image"]
-image = cv2.imread(filename) 
-# image = zoom( image, 300/image.shape[0], np.uint8 )
+image = cv2.imread(filename)
 image = resize( image, (400,400) )
 clone = image.copy()
-
 cv2.namedWindow(filename)
 cv2.setMouseCallback(filename, click_loop)
 
